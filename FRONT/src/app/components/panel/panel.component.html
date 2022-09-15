@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-between py-2">
+
+  <button class="mx-2" mat-icon-button (click)="opened=!opened" style="font-size: 20px;">
+    <i class="fas fa-bars ico" style="color: #109CF1;"></i>
+  </button>
+  <!-- <p class="mt-2">{{messagePayment}} {{vigencia | date }}</p> -->
+  <div class="my-2 mx-2">
+    <img src="../../../assets/datacarta.svg" alt="" style="width: 50px;" class="mx-1">
+    <img src="../../../assets/datatitulo.svg" alt="" style="width: 100px;" >
+    
+  </div>
+  
+</div>
+
+<mat-sidenav-container>
+  
+  <mat-sidenav mode="push" [(opened)]="opened">
+    
+    <div class="pt-4">
+     
+      <button routerLink="/panel/clients" class="btn py-1" style="width: 100%; text-align: left; font-size: 16px;">
+        <img class="px-3" src="../../../assets/Contactos.svg" style="height: 22px;">Panel de contactos</button>
+
+    </div>
+    <hr> 
+    <div class="pt-2">
+      <button routerLink="/panel/setting" class="btn py-1" style="width: 100%; text-align: left; font-size: 16px;"><img class="px-3" src="../../../assets/configcta.svg" style="height: 22px;">Configurar cuenta</button>
+     <!-- <button routerLink="/panel/setting/payment" class="btn py-1" style="width: 100%; text-align: left; font-size: 16px;"><img class="px-3" src="../../../assets/configpagos.svg" style="height: 22px;">Configurar pagos</button> -->
+      <button routerLink="/panel/setting/email" class="btn py-1" style="width: 100%; text-align: left; font-size: 16px;"><img class="px-3" src="../../../assets/configmail.svg" style="height: 22px;">Configurar email</button>
+    </div>
+    <hr>
+     <div class="pt-2">
+      <button routerLink="/panel/setting/faq" class="btn py-1" style="width: 100%; text-align: left; font-size: 16px;">
+        <img class="px-3" src="../../../assets/tutorial.svg" style="height: 22px;">Tutoriales y ayuda
+      </button>
+     </div>
+    <hr>
+     <div class="pt-2">
+      <button (click)="logout()" class="btn py-1" style="width: 100%; text-align: left; font-size: 16px;">
+        <img src="../../../assets/exit.svg" class="px-3" style="height: 24px;">Cerrar sesión
+      </button>
+     </div>
+     <p class="mt-5">{{messagePayment}} <br> <strong> {{vigencia | date }}</strong></p>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <div class="container mt-3">
+      <router-outlet></router-outlet>
+    </div>
+  
+  </mat-sidenav-content>
+  
+</mat-sidenav-container>
+
+
+
+
+

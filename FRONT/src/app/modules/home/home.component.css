@@ -1,0 +1,180 @@
+/*nav item  center*/
+* {
+	font-family: 'DM Sans', sans-serif;
+}
+.btn:hover {
+	opacity: 0.7;
+}
+
+.backg {
+	background: url(../../../assets/fondoheader.jpg);
+	background-size: cover;
+	background-position: center;
+	
+}
+.navbar-brand {
+	font-size: 34px;
+	font-weight: 700; 
+	font-style: normal; 
+	letter-spacing: -0.292683px;
+}
+
+.navbar-nav {
+	margin-left: auto;
+}
+
+.nav-item {
+	font-size: 16px;
+	font-weight: 500;
+}
+
+/* TXT PPAL */
+.txt-main h1, h2{
+	font-family: 'DM Sans', sans-serif;
+}
+.txt-main h1 {
+	font-size: 38px;
+}
+
+/* PRODUCTOS */
+
+.txt-prod h1 {
+	font-size: 42px;
+	font-weight: 700;
+	color: #4C488D;
+}
+
+.txt-prod h2 {
+	font-family: 'DM Sans', sans-serif;
+	font-size: 22px;
+	font-weight: 500;
+	color: #515152;
+}
+
+.txt-prod h6 {
+	font-size: 17px;
+}
+
+.txt-prod img {
+	height: 80px;
+}
+
+.img2 {
+	background: url(../../../assets/img2.jpg);
+	background-position: center;
+	background-size: cover;
+}
+.img3 {
+	background: url(../../../assets/img3.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+/* SOBRE NOSOTROS */
+
+.back2 {
+	background-color:#2F1893;
+}
+
+.back2 h1, h2 {
+	font-family: 'DM Sans', sans-serif;
+	font-style: normal;
+}
+
+.back2 h1 {
+	font-size: 42px;
+}
+.back2 h2 {
+	font-size: 21px;
+}
+.txt-nosotros h1 {
+	font-weight: 700;
+	font-size: 20px;
+	font-style: normal;
+}
+.txt-nosotros h2 {
+	font-size: 18px;
+	font-weight: 400;
+	font-style: normal;
+}
+
+/* CONTACTO */
+.backg-contacto {	
+	background: url(../../../assets/fondocontacto.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.backg-contacto h1 {
+	font-size: 42px;
+	letter-spacing: 2px;
+}
+
+/* FOOTER */
+
+
+footer h5 {
+	font-size: 18px;
+}
+
+@media (max-width: 600px) {
+	/* txt ppal*/
+	.txt-main h1 {
+		font-size: 30px;
+	}
+	/* txt productos*/
+	.txt-prod h1 {
+		font-size: 32px;
+	}
+	.txt-prod h2 {
+		font-size: 20px;
+	}
+	.txt-prod h6 {
+		font-size: 15px;
+	}
+	.txt-prod img {
+		height: 60px;
+	}
+	/* sobre nosotros */
+	.back2 h1 {
+		font-size: 30px;
+	}
+	.back2 h2 {
+		font-size: 18px;
+	}
+	/* contacto*/
+	.backg-contacto h1 {
+		font-size: 32px;
+	}
+}
+
+@media (max-width: 450px) {
+	.navbar-brand {
+		font-size: 30px;
+	}
+	.txt-prod img {
+		height: 50px;
+	}
+	.txt-prod h2 {
+		font-size: 18px;
+	}
+
+	.txt-prod h1 {
+		font-size: 26px;
+	}
+	.txt-prod h6 {
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 300px) {
+	.navbar-brand {
+		font-size: 28px;
+	}
+	.txt-main h1 {
+		font-size: 26px;
+	}
+	.txt-prod img {
+		height: 45px;
+	}
+}

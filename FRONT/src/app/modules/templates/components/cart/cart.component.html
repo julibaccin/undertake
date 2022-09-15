@@ -1,0 +1,88 @@
+   <div class="row">
+      <div class="col-sm-12 col-lg-6">
+        <h2>Finalizar la compra</h2>
+        <p>Puede terminar su compra por WhatsApp directamente con el vendedor o puede utilizar Mercado Pago.</p>
+        <p>Los campos con * son obligatorios.</p>
+        <div class="col">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control"  placeholder="name@example.com">
+                <label >Nombre y Apellido</label>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control"  placeholder="name@example.com">
+                <label>Email</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control"placeholder="name@example.com">
+                <label >Telefono</label>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label>Codigo Postal</label>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" placeholder="name@example.com">
+            <label>Codigo Descuento</label>
+          </div>
+          <button class="mt-1 btn btn-success m-1">Finalizar WhatsApp</button>
+          <button class="mt-1 btn btn-primary m-1">Finalizar Mercado Pago</button>
+        </div>
+        <br>
+      </div>
+      <div class="col-sm-12 col-lg-6">
+        <div class="table-responsive">
+          <table class="table table-hover table-light">
+            <thead>
+              <tr>
+                <th scope="col">Art.</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cant.</th>
+                <th scope="col">Ver</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of cart">
+                <td>{{data.product.name}}</td>
+                <td>
+                  {{data.product.price}}
+                </td>
+                <td>
+                  {{data.quantity}}
+                </td>
+                <td>
+                  <button class="btn btn-primary">
+                    <i (click)="showDetail(data.product)" class="fs-6 bi bi-eye-fill"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr class="table-dark">
+                <td><strong>TOTAL</strong></td>
+                <td><strong>{{totalPrice}} $</strong></td>
+                <td>
+                  <strong>{{totalQuantity}}</strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+
+
+

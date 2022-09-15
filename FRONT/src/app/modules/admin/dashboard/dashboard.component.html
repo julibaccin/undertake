@@ -1,0 +1,45 @@
+<!--
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let user of users">
+                    <div class="d-flex">
+                        <h3 class="me-2">Nombre de Usuario: {{user.user}}</h3>
+                                   
+                        <button (click)="handleBtnEditarClick(user)" class="btn btn-primary ms-auto">Editar</button>
+                    </div>           
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+-->
+
+<div class="row">
+    <div class="col">
+        <table class="table">
+            <thead class="table-dark">
+                <tr class="p-2">
+                    <th>Nombre</th>
+                    <th>Mail</th>
+                  
+                    <th>Usuario desde</th>
+                    <th>Usuario hasta</th>
+                  
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{user.user}}</td>
+                    <td>{{user.settingEmail}}</td>
+                    <td>{{user.created_at | date}} </td>
+                    <td>{{user.dateExpiration | date }} </td>
+                    <td>  <button (click)="handleBtnEditarClick(user)" class="btn btn-dark ms-auto">Editar</button> </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

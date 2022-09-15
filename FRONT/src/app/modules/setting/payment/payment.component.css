@@ -1,0 +1,10 @@
+.cont {
+    background: #fff;
+}
+
+button:hover {
+    transition: .5s;
+    background: rgb(3, 3, 150);
+    font-size: 16px;
+}
+

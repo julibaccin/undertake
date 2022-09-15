@@ -1,0 +1,80 @@
+
+<!--Seccion enviar msj -->
+<mat-dialog-content class="mat-typography">
+  <div class="container" >
+    <div class="row">
+      <div class="col">
+        <div class="d-flex justify-content-between header">
+          <h1>Mensaje nuevo</h1>
+          <i class="fas fa-times" style="font-size: 18px" mat-dialog-close></i>
+        </div>
+
+        <ng-container>
+          <div>
+            <mat-form-field class="w-100 mt-3" appearance="fill">
+              <mat-label>Asunto</mat-label>
+              <input #subject matInput />
+              <mat-icon matSuffix>mode_edit</mat-icon>
+            </mat-form-field>
+          </div>
+          <mat-chip-list
+            class="example-chip"
+            cdkDropList
+            cdkDropListOrientation="horizontal"
+          >
+            <mat-chip
+              class="example-box mb-3"
+              cdkDrag
+              *ngFor="let chip of chips"
+              (click)="addChip(chip, 'subject')"
+            >
+              {{ chip }}
+            </mat-chip>
+          </mat-chip-list>
+        </ng-container>
+
+        <div>
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Ingrese el mensaje</mat-label>
+            <textarea
+              style="height: 150px"
+              #message
+              matInput
+              placeholder="Hola buenos días {name}, somos la empresa ..., nos contactamos a su email: {email} ..."
+            ></textarea>
+          </mat-form-field>
+        </div>
+
+        <mat-chip-list
+          class="example-chip"
+          cdkDropList
+          cdkDropListOrientation="horizontal"
+        >
+          <mat-chip
+            class="example-box mb-3"
+            cdkDrag
+            *ngFor="let chip of chips"
+            (click)="addChip(chip, 'message')"
+          >
+            {{ chip }}
+          </mat-chip>
+        </mat-chip-list>
+
+        <div>
+          <button (click)="send()" class="btn btn-success my-2">Enviar</button>
+        </div>
+      </div>
+        <!--
+        <div>
+        <h1 *ngIf="showSpinner">
+          Está por aparecer un codigo QR, por favor abrir WhatsApp desde el
+          celular que se quiere usar para el envio de mensajes y escanearlo en
+          menos de {{ segundosFaltan }} segundos
+        </h1>
+        <mat-spinner class="m-auto" *ngIf="showSpinner"></mat-spinner>
+        <div style="width: 300px; text-align: center" #imagenAca></div>
+      </div>
+      -->
+    </div>
+  </div>
+</mat-dialog-content>

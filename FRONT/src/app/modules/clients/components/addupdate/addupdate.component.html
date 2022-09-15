@@ -1,0 +1,274 @@
+<mat-dialog-content class="mat-typography">
+  <div class="d-flex justify-content-between header">
+    <h1>Añadir o Actualizar Cliente</h1>
+    <i class="fas fa-times" mat-dialog-close></i>
+  </div>
+
+  <hr />
+  <form [formGroup]="formGroup" (ngSubmit)="createUpdateClient($event)">
+    <div class="row justify-content-center text-center pt-5">
+      <div class="col-10 col-sm-6 col-md-4">
+        <mat-form-field style="width: 90%" appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input autocomplete="off" matInput formControlName="firstName" />
+          <mat-icon matSuffix style="color: rgb(161, 157, 157)"
+            >mode_edit</mat-icon
+          >
+        </mat-form-field>
+      </div>
+      <div class="col-10 col-sm-6 col-md-4">
+        <mat-form-field style="width: 90%; margin: auto" appearance="fill">
+          <mat-label>Apellido</mat-label>
+          <input autocomplete="off" matInput formControlName="lastName" />
+          <mat-icon matSuffix style="color: rgb(161, 157, 157)"
+            >mode_edit</mat-icon
+          >
+        </mat-form-field>
+      </div>
+
+      <div class="col-10 col-sm-6 col-md-4">
+        <mat-form-field style="width: 90%; margin: auto" appearance="fill">
+          <mat-label>Empresa/Emprendimiento</mat-label>
+          <input matInput formControlName="enterprise"/>
+          <mat-icon matSuffix style="color: rgb(161, 157, 157)"
+            >mode_edit</mat-icon
+          >
+        </mat-form-field>
+      </div>
+
+      <div class="col-10 col-sm-6 col-md-4">
+        <mat-form-field style="width: 90%; margin: auto" appearance="fill">
+          <mat-label>Pais</mat-label>
+          <input autocomplete="off" matInput formControlName="country" />
+          <mat-icon matSuffix style="color: rgb(161, 157, 157)"
+            >mode_edit</mat-icon
+          >
+        </mat-form-field>
+      </div>
+
+      <div class="col-10 col-sm-6 col-md-4">
+        <mat-form-field style="width: 90%; margin: auto" appearance="fill">
+          <mat-label>Provincia</mat-label>
+          <input
+            type="text"
+            autocomplete="off"
+            matInput
+            formControlName="province"
+          />
+          <mat-icon matSuffix style="color: rgb(161, 157, 157)"
+            >mode_edit</mat-icon
+          >
+        </mat-form-field>
+      </div>
+      <div class="col-10 col-sm-6 col-md-4">
+        <mat-form-field style="width: 90%; margin: auto" appearance="fill">
+          <mat-label>Ciudad</mat-label>
+          <input
+            type="text"
+            autocomplete="off"
+            matInput
+            formControlName="city"
+          />
+          <mat-icon matSuffix style="color: rgb(161, 157, 157)"
+            >mode_edit</mat-icon
+          >
+        </mat-form-field>
+      </div>
+
+      <div class="col-10 col-sm-6 col-md-4">
+        <mat-form-field style="width: 90%; margin: auto" appearance="fill">
+          <mat-label>Dirección</mat-label>
+          <input
+            type="text"
+            autocomplete="off"
+            matInput
+            placeholder="ej: La Plata"
+            formControlName="address"
+          />
+          <mat-icon matSuffix style="color: rgb(161, 157, 157)"
+            >mode_edit</mat-icon
+          >
+        </mat-form-field>
+      </div>
+
+      <div class="col-10 col-sm-6 col-md-4">
+        <mat-form-field style="width: 90%; margin: auto" appearance="fill">
+          <mat-label>Sexo</mat-label>
+          <mat-select formControlName="gender">
+            <mat-option value="h">Hombre</mat-option>
+            <mat-option value="m">Mujer</mat-option>
+            <mat-option value="o">Otro</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="col-10 col-sm-6 col-md-4">
+        <mat-form-field style="width: 90%; margin: auto" appearance="fill">
+          <mat-label>Estado Civil</mat-label>
+          <mat-select formControlName="civilStatus">
+            <mat-option [value]="1">Soltero/a</mat-option>
+            <mat-option [value]="2">Casado/a</mat-option>
+            <mat-option [value]="3">Divorciado/a</mat-option>
+            <mat-option [value]="4">Viudo/a</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-10 col-sm-6 col-md-4">
+        <mat-form-field style="width: 90%; margin: auto" appearance="fill">
+          <mat-label>Fecha de nacimiento</mat-label>
+          <input
+            matInput
+            autocomplete="off"
+            [matDatepicker]="picker"
+            formControlName="birthDate"
+            placeholder="DD/MM/AA"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col-10 col-sm-6 col-md-4">
+        <mat-form-field style="width: 90%; margin: auto" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input
+            type="email"
+            matInput
+            placeholder="email"
+            formControlName="email"
+            autocomplete="off"
+          />
+          <mat-icon matSuffix style="color: rgb(161, 157, 157)"
+            >mode_edit</mat-icon
+          >
+        </mat-form-field>
+      </div>
+      <div class="col-10 col-sm-6 col-md-4">
+        <mat-form-field style="width: 90%; margin: auto" appearance="fill">
+          <mat-label>Celular</mat-label>
+          <input
+            type="number"
+            autocomplete="off"
+            matInput
+            placeholder="Ingresar el codigo de area como por ej. 3462302919"
+            formControlName="phone"
+          />
+          <mat-icon matSuffix style="color: rgb(161, 157, 157)"
+            >mode_edit</mat-icon
+          >
+        </mat-form-field>
+      </div>
+      <div class="col-10 col-sm-6 col-md-4">
+        <mat-form-field style="width: 90%; margin: auto" appearance="fill">
+          <mat-label>Profesión</mat-label>
+          <input autocomplete="off" matInput formControlName="activity" />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div
+      class="
+        row
+        justify-content-center justify-content-md-around
+        py-5
+        checks-txt
+      "
+    >
+      <div class="col-12 col-md-6">
+        <h2 class="text-center">Medios de comunicación disponibles</h2>
+        <div class="row py-4 text-center">
+          <div class="col-6 col-md-6">
+            <div>
+              <mat-checkbox formControlName="haveTelegram" color="primary">Telegram</mat-checkbox>
+            </div>
+          </div>
+          <div class="col-6 col-md-6 text-center">
+            <div>
+              <mat-checkbox formControlName="haveWhatsapp" color="primary">WhatsApp</mat-checkbox>
+            </div>
+          </div>
+          <div class="col-6 col-md-6">
+            <div>
+                <mat-form-field style="width: 90%; margin: auto" appearance="fill">
+                  <mat-label>Link Facebook</mat-label>
+                  <input autocomplete="off" matInput formControlName="facebookLink" />
+                </mat-form-field>
+            </div>
+          </div>
+          <div class="col-6 col-md-6">
+            <mat-form-field style="width: 90%; margin: auto" appearance="fill">
+              <mat-label>Link Instagram</mat-label>
+              <input autocomplete="off" matInput formControlName="instagramLink" />
+            </mat-form-field>
+          </div>
+          <div class="col-6 col-md-6">
+            <mat-form-field style="width: 90%; margin: auto" appearance="fill">
+              <mat-label>Otro Link</mat-label>
+              <input autocomplete="off" matInput formControlName="otherLink" />
+            </mat-form-field>
+          </div>
+          
+        </div>
+      </div>
+      <div class="col-12 col-md-6 text-center">
+        <h2>Nota Personalizada</h2>
+        <mat-form-field appearance="fill" style="width: 90%">
+          <mat-label>Personalizado</mat-label>
+          <textarea
+            matInput
+            #message
+            maxlength="256"
+            formControlName="note"
+            placeholder="Ingrese una nota personalizada"
+          ></textarea>
+          <mat-hint align="end">{{ message.value.length }} / 256</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="col-12 col-md-6 text-center">
+        <h2>Tema de conversación del último contacto</h2>
+        <mat-form-field appearance="fill" style="width: 90%">
+          <mat-label>Nota #1</mat-label>
+          <textarea
+            matInput
+            #message
+            formControlName="lastTalk"
+            maxlength="256"
+            placeholder="Ingrese una nota"
+          ></textarea>
+          <mat-hint align="end">{{ message.value.length }} / 256</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="col-12 col-md-6 text-center">
+        <h2>Ultima compra</h2>
+        <mat-form-field appearance="fill" style="width: 90%">
+          <mat-label>Nota #1</mat-label>
+          <textarea
+            matInput
+            #message
+            formControlName="lastPurchase"
+            maxlength="256"
+            placeholder="Ingrese una nota"
+          ></textarea>
+          <mat-hint align="end">{{ message.value.length }} / 256</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button class="btn-danger" mat-button mat-dialog-close>Cancelar</button>
+  <button
+    class="btn-success"
+    mat-button
+    [mat-dialog-close]="true"
+    (click)="createUpdateClient($event)"
+    cdkFocusInitial
+  >
+    {{ title }}
+  </button>
+</mat-dialog-actions>

@@ -1,0 +1,34 @@
+<ng-container *ngIf="user">
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between pb-3">
+            <h2>{{user.user}} Detalles </h2>
+            <button class="btn btn-secondary" routerLink="/admin">Volver</button>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <div>
+                    <h2 style="font-weight: 400;" class="me-3"><span style="font-weight: 500;">Activo:</span> {{user.active}}</h2>
+                    <h2 style="font-weight: 400;" class="me-3"><span style="font-weight: 500;">Usuario desde:</span> {{user.created_at | date}}</h2>
+                    <h2 style="font-weight: 400;" class="me-3"><span style="font-weight: 500;">Fecha de expiración:</span> {{user.dateExpiration | date}}</h2>
+                    <h2 style="font-weight: 400;" class="me-3"><span style="font-weight: 500;">Mail:</span> {{user.settingEmail}}</h2>
+                    <h2 style="font-weight: 400;" class="me-3"><span style="font-weight: 500;">Pais:</span> - </h2>
+                    <h2 style="font-weight: 400;" class="me-3"><span style="font-weight: 500;">Provincia:</span> - </h2>
+                    <h2 style="font-weight: 400;" class="me-3"><span style="font-weight: 500;">Correo:</span> - </h2>
+                    <h2 style="font-weight: 400;" class="me-3"><span style="font-weight: 500;">Telefono:</span> - </h2>
+                </div>
+                <div class="d-flex">
+                    <button (click)="extenderExpiracion()" class="btn btn-success mx-2">Extender Días</button> 
+                    <button (click)="resetExpiracion()" class="btn btn-danger">Resetear Días</button>
+                </div>
+                      
+            </li>
+        </ul>
+    </div>
+</ng-container>
+
+
+  
+ 
+
+
+

@@ -1,0 +1,23 @@
+
+ mat-sidenav-container {
+   height: 100vh;
+}
+mat-sidenav, mat-sidenav-content {
+  padding: 16px;
+}
+
+mat-sidenav {
+  background-color: #fff;
+  width: 300px;
+}
+
+mat-sidenav button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: #334D6E;
+}
+
+.btn:hover {
+  color: #109CF1;
+}
+

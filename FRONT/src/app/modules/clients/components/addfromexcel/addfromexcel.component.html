@@ -1,0 +1,40 @@
+<mat-dialog-content>
+  <div class="d-flex justify-content-between header">
+    <h2>
+      Importar contactos desde Excel
+    </h2>
+    <i class="fas fa-times" style="margin-left: 15px" mat-dialog-close></i>
+  </div>
+</mat-dialog-content>
+<p>
+  Recordá tener preparado tu excel antes de subirlo. 
+  <!-- Si aun no sabes como
+  hacerlo, te invitamos a clickear.
+  <a href="javascript:window.open('https://back.undertake.ar/public/excel.pdf','','toolbar=yes');void 0">Aquí</a>
+  -->
+</p>
+<p>
+  <a href="javascript:window.open('https://back.undertake.ar/public/excelMolde.xlsx','','toolbar=yes');void 0">Aquí</a>
+  tenés un excel que podés usar de base.
+</p>
+
+<hr />
+<div>
+  <input
+    type="file"
+    style="display: inline-block"
+    (change)="onFileChange($event)"
+    placeholder="Subir Archivo"
+    accept=".xlsx"
+  />
+</div>
+
+<mat-dialog-actions style="margin-top: 15px" align="end">
+  <button
+    type="button"
+    (click)="createClientsWithExcel()"
+    class="btn btn-primary"
+  >
+    Cargar Excel
+  </button>
+</mat-dialog-actions>

@@ -1,0 +1,84 @@
+
+.header h1 {
+    font-family:'Roboto', sans-serif;
+    font-size: 22px;
+}
+.header i {
+    color:#F7685B;
+    font-size: 22px;
+}
+
+.header i:hover {
+    transform: scale(1.2);
+    transition: .5s;
+    color: #e05447;
+    cursor: pointer;
+}
+
+/* sociales */ 
+.cont-check {
+    width: 90%;
+    margin: auto;
+}
+.cont-check h1 {
+    font-size: 20px;
+}
+
+mat-checkbox {
+    font-size: 16px;
+}
+
+textarea {
+    height: 75px;
+}
+
+.footer h3 {
+    font-family:'Roboto', sans-serif;
+}
+.footer a {
+    text-decoration: none;
+}
+.footer a h3:hover {
+    transform: scale(1.05);
+    transition: .3s;
+}
+
+.footer button {
+    height: 40px;
+    border-radius: 10px;
+}
+
+
+.btn {
+    background: rgb(28,129,196);
+    
+    color: #fff;
+    font-family:'Inter', sans-serif;
+}
+
+@media (max-width: 600px) {
+    /*sociales*/
+    .checks-txt h2 {
+        font-size: 18px;
+    }
+    /* footer */
+    .footer h3 {
+        font-size: 13px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+    /* sociales*/
+    .checks-txt h2 {
+        font-size: 16px;
+    }
+    mat-checkbox {
+        font-size: 14px;
+    }
+    /* footer */
+    .footer h3 {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+    <!--COLUMNA 1 IMAGENES-->
+    <div class="col-12 col-md-6">
+      <!--IMAGEN PRINCIPAL-->
+      <div class="row">
+        <img
+          class="img-fluid"
+          #imgGrande
+          [src]="data.imgUrl"
+          alt="nike"
+        />
+      </div>
+
+      <!--IMAGENES VARIAS-->
+      <div class="row mt-2">
+        <div
+          class="col-6 col-md-3"
+        >
+            <img
+              data-id="1"
+              class="img-thumbnail"
+              [src]="data.imgUrl"
+              alt=""
+            />
+        </div>
+      </div>
+    </div>
+
+    <!--COLUMNA 2 DATOS-->
+    <div class="col-12 col-md-6 p-3">
+      <div class="product-content">
+        <h2 class="fs-2">{{ data.name }}</h2>
+
+        <div class="product-rating">
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-half"></i>
+        </div>
+        <div class="mt-4">
+          <h2 class="fs-3">Descripción</h2>
+          <p class="fs-5">{{ data.description }}</p>
+          <div class="d-flex align-items-center mt-4">
+            <i (click)="disminuir()" class="bi bi-dash-circle fs-3"></i>
+            <p class="fs-3 p-4 mt-2">{{ cant }}</p>
+            <i (click)="aumentar()" class="bi bi-plus-circle fs-3"></i>
+          </div>
+        </div>
+        <div class="mt-4">
+          <p class="fs-3">
+            Precio: <strong>{{ data.price }} $ </strong>
+          </p>
+        </div>
+        <div class="mt-4">
+          <button type="button" (click)="addCart()" class="btn btn-primary">
+            Agregar al carrito <i class="bi bi-cart"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

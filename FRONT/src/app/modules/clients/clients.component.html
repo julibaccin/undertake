@@ -1,0 +1,148 @@
+<div class="bg-light text-dark p-3">
+  <div class="row">
+    <div class="col text-center">
+      <h1 style="font-weight: 500; font-size: 28px">Panel de contactos</h1>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-12 col-md-5 text-start">
+      <!--Encabezado Tabla-->
+      <mat-form-field class="w-100">
+        <mat-label>Filtrar Contactos</mat-label>
+        <input
+          autocomplete="off"
+          matInput
+          (keyup)="applyFilter($event)"
+          placeholder="Puede filtrar por cualquier campo"
+          #input
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-7 text-end">
+      <button
+        type="button"
+        (click)="openDialogCreateUpdateClient(null)"
+        class="btn btn-outline-primary m-1"
+      >
+        Añadir Contacto
+        <i class="bi bi-person-plus-fill"></i>
+      </button>
+      <button
+        type="button"
+        (click)="openDialogAddFromExcel()"
+        class="btn btn-outline-success m-1"
+      >
+        Importar desde Excel
+        <i class="bi bi-file-earmark-excel-fill"></i>
+      </button>
+      <button
+        type="button"
+        (click)="openDialogSendText()"
+        class="btn btn-outline-secondary m-1"
+      >
+        Enviar Mensaje
+        <i class="bi bi-cursor-fill"></i>
+      </button>
+    </div>
+  </div>
+<!--
+  <div class="bg-dark text-white text-center mat-elevation-z2 mt-2 check">
+    <h3 class="txt-check" style="padding: 5px;">Seleccionar todos</h3>
+  </div>
+-->
+  <div class="row py-3">
+    <div class="col-12">
+      <div class="example-container mat-elevation-z8">
+        <mat-table #clientsTable [dataSource]="dataSource">
+          <!-- Checkbox Column -->
+          <ng-container matColumnDef="select" [sticky]="true">     
+
+           
+              <th mat-header-cell *matHeaderCellDef class="d-flex align-items-center text-start">     
+                <mat-checkbox class="checkbox"             
+                  (change)="$event ? masterToggle() : null"
+                  [checked]="selection.hasValue() && isAllSelected()"
+                  [indeterminate]="selection.hasValue() && !isAllSelected()"
+                  [aria-label]="checkboxLabel()">             
+                </mat-checkbox>
+                <mat-label style="padding-left: 5px;">Todos</mat-label>
+              </th>
+           
+            
+           
+              <td mat-cell *matCellDef="let row" class="text-start">
+                <mat-checkbox
+                  (click)="$event.stopPropagation()"
+                  (change)="$event ? selection.toggle(row) : null"
+                  [checked]="selection.isSelected(row)"
+                  [aria-label]="checkboxLabel(row)"> 
+                </mat-checkbox>
+              </td>
+           
+
+          </ng-container>
+         
+          <!-- FirstName Column -->
+          <ng-container matColumnDef="firstName">
+            <th mat-header-cell *matHeaderCellDef>Nombre</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.firstName }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="lastName">
+            <th mat-header-cell *matHeaderCellDef>Apellido</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.lastName }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="email">
+            <th class="anchoemail" mat-header-cell *matHeaderCellDef>Email</th>
+            <td class="anchoemail" mat-cell *matCellDef="let element">
+              {{ element.email }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="phone">
+            <th mat-header-cell *matHeaderCellDef>Teléfono</th>
+            <td mat-cell *matCellDef="let element">{{ element.phone }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef>Dirección</th>
+            <td mat-cell *matCellDef="let element">{{ element.address }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="sendSMS" stickyEnd>
+            <th class="anchoactions" mat-header-cell *matHeaderCellDef>
+              Acciones
+            </th>
+            <td class="anchoactions" mat-cell *matCellDef="let element">
+              <button
+                (click)="viewMore(element.id)"
+                class="btn btn-outline-primary mx-1"
+              >
+                <i class="bi bi-info-circle"></i>
+              </button>
+              <button
+                (click)="delete(element.id)"
+                class="btn btn-outline-danger mx-1"
+              >
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>
+          </ng-container>
+
+          <mat-header-row
+            *matHeaderRowDef="displayedColumns; sticky: true"
+          ></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+        </mat-table>
+      </div>
+      <h3 class="py-3">Cantidad de contactos: {{ dataSource.data ? dataSource.data.length : 0 }}</h3>
+    </div>
+  </div>
+</div>

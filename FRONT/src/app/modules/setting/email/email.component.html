@@ -1,0 +1,79 @@
+<h1 style="font-weight: 500; font-size: 24px">Configuración</h1>
+<hr />
+<!--EMAIL SETTINGS-->
+<div class="row">
+  <div class="col d-flex justify-content-start align-items-center">
+    <i class="fas fa-envelope mx-2" style="font-size: 20px"></i>
+    <h2 style="font-weight: 400; font-size: 20px" class="mt-3">
+      Email Settings
+    </h2>
+  </div>
+</div>
+
+<h3><strong>!! IMPORTANTE !!</strong></h3>
+<p>
+  Si va a configurar un "Gmail", debe habilitar el acceso a aplicaciones menos
+  seguras, o colocar una contraseña de aplicación, como indica el siguiente link
+  a continuación:
+  <a href="javascript:window.open('https://support.google.com/accounts/answer/6010255?hl=es-419#zippy=','','toolbar=yes');void 0"
+    >Link</a
+  >
+</p>
+
+<div class="row py-2 px-2">
+  <form [formGroup]="emailGroup" (ngSubmit)="saveEmailSetting()">
+    <div class="col-10 col-sm-6 col-md-4 py-2">
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input
+          type="email"
+          autocomplete="off"
+          formControlName="settingsEmail"
+          matInput
+          placeholder="Ex. pat@example.com"
+        />
+        <mat-error
+          *ngIf="
+            emailGroup.get('settingsEmail').hasError('invalid') &&
+            emailGroup.get('settingsEmail').touched
+          "
+        >
+          Por favor, ingrese un email valido.
+        </mat-error>
+        <mat-error
+          *ngIf="
+            emailGroup.get('settingsEmail').hasError('required') &&
+            emailGroup.get('settingsEmail').touched
+          "
+        >
+          El Email es <strong>requerido</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-10 col-sm-6 col-md-4">
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          autocomplete="off"
+          [type]="hide ? 'password' : 'text'"
+          formControlName="settingsPassword"
+        />
+        <button
+          type="button"
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <button type="submit" class="btn btn-primary my-2">Guardar</button>
+  </form>
+</div>
+
+<hr />

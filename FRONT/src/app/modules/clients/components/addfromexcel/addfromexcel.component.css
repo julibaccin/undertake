@@ -1,0 +1,14 @@
+.header h2 {
+    font-family:'Roboto', sans-serif;
+    font-size: 22px;
+}
+.header i {
+    color:#F7685B;
+    font-size: 22px;
+}
+
+.header i:hover {
+  
+    color: #e05447;
+    cursor: pointer;
+}

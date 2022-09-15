@@ -1,0 +1,95 @@
+.header h1 {
+    font-family:'Roboto', sans-serif;
+    font-size: 22px;
+}
+
+.header i {
+    color:#F7685B;
+    font-size: 22px;
+}
+
+.header i:hover {
+    transform: scale(1.2);
+    transition: .5s;
+    color: #e05447;
+    cursor: pointer;
+}
+
+.header h2 {
+    font-size: 18px; 
+}
+
+.hover:hover {
+    cursor: pointer;
+}
+
+.col-data-clk {
+    /*
+    transform: scale(1.1);
+    transition: 0.5s;
+    */
+    border: 2px solid #109CF1;
+    border-radius: 5px;
+    background-color:rgb(241, 240, 240);
+}
+.col-data-clk i {
+    transform: scale(1.1);
+    transition: 0.5s;
+    color: #109CF1;
+}
+.col-data-clk h2 {
+    transform: scale(1.1);
+    transition: 0.5s;
+    color: #109CF1;
+}
+.col-data {
+    transform: scale(1);
+    transition: 0.5s;
+    border: none;
+}
+.col-data i {
+    transform: scale(1);
+    transition: 0.5s;
+    color: #000;
+}
+.col-data h2 {
+    transform: scale(1);
+    transition: 0.5s;
+    color: #000;
+}
+/*  COL-WHAAP*/
+.col-whtp {
+    transform: scale(1);
+    transition: 0.5s;
+    border: none;
+}
+.col-whtp i {
+    transform: scale(1);
+    transition: 0.5s;
+    color: #000;
+}
+.col-whtp h2 {
+    transform: scale(1);
+    transition: 0.5s;
+    color: #000;
+}
+
+.col-whtp-clk {
+    /*
+    transform: scale(1.1);
+    transition: 0.5s;
+    */
+    border: 2px solid #109CF1;
+    border-radius: 5px;
+    background-color:rgb(241, 240, 240);
+}
+.col-whtp-clk i {
+    transform: scale(1.1);
+    transition: 0.5s;
+    color: #109CF1;
+}
+.col-whtp-clk h2 {
+    transform: scale(1.1);
+    transition: 0.5s;
+    color: #109CF1;
+}

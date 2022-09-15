@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+
+  mariadb:
+    image: mariadb
+    environment:
+     - MYSQL_DATABASE=beta
+     - MYSQL_ROOT_PASSWORD=lacontrasenia
+     - MARIADB_USER=root
+    restart: always
+    volumes:
+      - ./mariaBACK:/var/lib/mysql
+
+  app:
+    build: .
+    restart: always
+    ports: 
+      - 3000:3000
+    depends_on:
+      - mariadb
+    environment:
+      - PORT=3000
+      - PORTDB=3306
+      - USERDB=root
+      - PASSDB=lacontrasenia
+      - NAMEDB=beta
+      - HOSTDB=mariadb
+      - SECRET_KEY=algunapassword
+      # - PUPPETEER_SKIP_DOWNLOAD=true
+    volumes: 
+      - .:/src
+      
+
+
